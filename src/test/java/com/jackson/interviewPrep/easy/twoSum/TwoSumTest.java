@@ -49,18 +49,46 @@ class TwoSumTest {
     @Test
     void twoSumFirstExampleShouldPassTheUnitTest() {
         int[] result = {0,1};
-        assertArrayEquals(mTwosum.twoSum(test1, target1), result); ;
+        assertArrayEquals(mTwosum.twoSum(test1, target1), result);
     }
 
     @Test
     void twoSumSecondExampleShouldPassTheUnitTest() {
         int[] result = {1,2};
-        assertArrayEquals(mTwosum.twoSum(test2, target2), result); ;
+        assertArrayEquals(mTwosum.twoSum(test2, target2), result);
     }
 
     @Test
     void twoSumThirdExampleShouldPassTheUnitTest() {
         int[] result = {0,1};
-        assertArrayEquals(mTwosum.twoSum(test3, target3), result); ;
+        assertArrayEquals(mTwosum.twoSum(test3, target3), result);
+    }
+
+
+    @Test
+    void test(){
+        int[] result = {0,1};
+
+//        2,7,11,15], target = 9
+        int[] test =  twoSum(new int[]{2,7,11,15}, 9);
+        for(int a : test){
+            System.out.println(a);
+        }
+
+        assertArrayEquals(mTwosum.twoSum(new int[]{2,7,11,15}, 9), result);
+
+    }
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        for(int initialCounter = 0 ;  initialCounter < nums.length -1 ; initialCounter++){
+            for(int secondCounter = initialCounter + 1 ; secondCounter  < nums.length  ; secondCounter++){
+                if (nums[initialCounter] + nums[secondCounter] == target ){
+                    result[0] = initialCounter;
+                    result[1] = secondCounter;
+                }
+            }
+        }
+        return result;
     }
 }
