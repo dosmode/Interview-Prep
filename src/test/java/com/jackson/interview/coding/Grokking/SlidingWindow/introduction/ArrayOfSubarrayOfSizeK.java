@@ -38,6 +38,13 @@ class ArrayOfSubarrayOfSizeK {
         System.out.println(Arrays.toString(result));
     }
 
+    @Test
+    void slidingWindowSolution(){
+
+        double[] result = findAverageUsingSlidingWindow(5, new int[] {1, 3, 2, 6, -1, 4, 1, 8, 2});
+        System.out.println(Arrays.toString(result));
+    }
+
     private static double[] findAverage(int k, int[] array){
         double[] result = new double[array.length + 1 - k];
         for (int i = 0; i <= array.length - k ; i++){
@@ -47,8 +54,21 @@ class ArrayOfSubarrayOfSizeK {
             }
             result[i] = sum/k;
         }
+        return result;
+    }
 
-
+    private static double[] findAverageUsingSlidingWindow(int k, int[] array){
+        double[] result = new double[array.length + 1 - k];
+        double windowResult = 0.0;
+        int windowStart =0;
+        for (int windowEnd = 0; windowEnd <= array.length-1 ; windowEnd++){
+            windowResult += array[windowEnd];
+            if(windowEnd >= k-1){
+                result[windowStart] = windowResult/k;
+                windowResult -= array[windowStart];
+                windowStart++;
+            }
+        }
         return result;
     }
 }
