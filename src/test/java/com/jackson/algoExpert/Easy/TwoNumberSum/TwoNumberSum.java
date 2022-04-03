@@ -1,4 +1,4 @@
-package com.jackson.algoExpert.Arrays.Easy.TwoNumberSum;
+package com.jackson.algoExpert.Easy.TwoNumberSum;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

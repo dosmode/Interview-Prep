@@ -1,4 +1,4 @@
-package com.jackson.algoExpert.Arrays.Easy.ValidateSubsequence;
+package com.jackson.algoExpert.Easy.ValidateSubsequence;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

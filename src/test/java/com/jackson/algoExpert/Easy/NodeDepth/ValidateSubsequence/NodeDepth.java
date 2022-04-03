@@ -1,11 +1,8 @@
-package com.jackson.algoExpert.Arrays.Easy.NodeDepth.ValidateSubsequence;
+package com.jackson.algoExpert.Easy.NodeDepth.ValidateSubsequence;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
