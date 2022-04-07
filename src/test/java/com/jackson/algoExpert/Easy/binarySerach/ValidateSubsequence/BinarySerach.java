@@ -22,6 +22,8 @@ class Program {
 	}
 
 	public static int binarySearch(int[] array, int target, int start, int end) {
+		if(start>end) return -1;
+
 		int middlePoint =( start + end) / 2;
 		if (target < array[middlePoint]) {
 			return binarySearch(array, target, start, middlePoint-1);
