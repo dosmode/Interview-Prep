@@ -50,10 +50,10 @@ class Program {
 
 	public static void locationShifter(int number, int[] temp, int index) {
 		for (int i = 0; i <= index; i++) {
-			if(index == i){
-				temp[i]= number;
-			}else {
-				temp[i]= temp[i+1];
+			if (index == i) {
+				temp[i] = number;
+			} else {
+				temp[i] = temp[i + 1];
 			}
 
 		}
