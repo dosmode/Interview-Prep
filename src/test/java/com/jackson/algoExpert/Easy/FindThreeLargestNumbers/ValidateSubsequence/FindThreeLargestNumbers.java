@@ -1,5 +1,6 @@
 package com.jackson.algoExpert.Easy.FindThreeLargestNumbers.ValidateSubsequence;
 
+import org.assertj.core.internal.BinaryDiff;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -29,7 +30,32 @@ class ProgramTest {
 
 class Program {
 	public static int[] findThreeLargestNumbers(int[] array) {
-		// Write your code here.
-		return null;
+		int temp[] = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
+		for (int i : array) {
+			findLocation(i, temp);
+		}
+		return temp;
+	}
+
+	public static void findLocation(int number, int[] temp) {
+		if (number > temp[2]) {
+			locationShifter(number, temp, 2);
+		} else if (number > temp[1]) {
+			locationShifter(number, temp, 1);
+		} else if (number > temp[0]) {
+			locationShifter(number, temp, 0);
+
+		}
+	}
+
+	public static void locationShifter(int number, int[] temp, int index) {
+		for (int i = 0; i <= index; i++) {
+			if(index == i){
+				temp[i]= number;
+			}else {
+				temp[i]= temp[i+1];
+			}
+
+		}
 	}
 }
