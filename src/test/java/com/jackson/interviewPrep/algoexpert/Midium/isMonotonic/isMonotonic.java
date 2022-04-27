@@ -21,24 +21,18 @@ class ProgramTest {
 
 class Program {
 	public static boolean isMonotonic(int[] array) {
-		boolean isGettingGreater = false;
-		if(array[1] > array[0]){
-			isGettingGreater = true ;
-		}
-		if(isGettingGreater){
-			for(int i = 0 ; array.length-2 > i ; i++){
-				if( array[i+1] < array[i] ){
-					return false;
-				}
-			}
-		}else{
-			for(int i = 0 ; array.length-2 > i ; i++){
-				if( array[i+1] > array[i] ){
-					return false;
-				}
-			}
+			return increasing(array) || decreasing(array);
 		}
 
-		return true;
-	}
+		static boolean increasing(int[] array) {
+			for (int i = 0; i < array.length - 1; ++i)
+				if (array[i] >array[i+1]) return false;
+			return true;
+		}
+
+		static boolean decreasing(int[] array) {
+			for (int i = 0; i <array.length - 1; ++i)
+				if (array[i] < array[i+1]) return false;
+			return true;
+		}
 }
