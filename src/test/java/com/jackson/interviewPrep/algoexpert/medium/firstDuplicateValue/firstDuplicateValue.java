@@ -1,8 +1,7 @@
-package com.jackson.interviewPrep.algoexpert.Midium.firstDuplicateValue;
+package com.jackson.interviewPrep.algoexpert.medium.firstDuplicateValue;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 

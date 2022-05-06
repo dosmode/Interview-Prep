@@ -1,4 +1,4 @@
-package com.jackson.interviewPrep.algoexpert.Midium.moveElementToEnd;
+package com.jackson.interviewPrep.algoexpert.medium.moveElementToEnd;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,8 +1,6 @@
-package com.jackson.interviewPrep.algoexpert.Midium.isMonotonic;
+package com.jackson.interviewPrep.algoexpert.medium.isMonotonic;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

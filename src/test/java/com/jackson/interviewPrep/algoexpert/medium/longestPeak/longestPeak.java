@@ -1,11 +1,6 @@
-package com.jackson.interviewPrep.algoexpert.Midium.longestPeak;
+package com.jackson.interviewPrep.algoexpert.medium.longestPeak;
 
 import org.junit.jupiter.api.Test;
-
-import java.sql.Array;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,8 +1,7 @@
-package com.jackson.interviewPrep.algoexpert.Midium.spiralTraverse;
+package com.jackson.interviewPrep.algoexpert.medium.spiralTraverse;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;

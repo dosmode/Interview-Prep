@@ -1,4 +1,4 @@
-package com.jackson.interviewPrep.algoexpert.Midium.arrayOfProducts;
+package com.jackson.interviewPrep.algoexpert.medium.arrayOfProducts;
 
 import org.junit.jupiter.api.Test;
 

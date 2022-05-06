@@ -1,4 +1,4 @@
-package com.jackson.interviewPrep.algoexpert.Midium.mergeOverlappingIntervals;
+package com.jackson.interviewPrep.algoexpert.medium.mergeOverlappingIntervals;
 
 import org.junit.jupiter.api.Test;
 
