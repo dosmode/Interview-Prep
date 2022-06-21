@@ -1,10 +1,6 @@
-package com.jackson.interviewPrep.algoexpert.medium.BSTConstruction.mergeOverlappingIntervals;
+package com.jackson.interviewPrep.algoexpert.medium.BSTConstruction;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -45,25 +41,19 @@ class Program {
 		}
 
 		public BST insert(int value) {
-			// Write your code here.
-			// Do not edit the return statement of this method.
-
-			//if the value is bigger than left, insert to right
-			if (this.value > value) {
-				if (this.right == null) {
+			if (value < this.value) {
+				if (left == null) {
+					BST newLeft = new BST(value);
+					left = newLeft;
+				} else {
+					left.insert(value);
+				}
+			} else {
+				if (right == null) {
 					BST newRight = new BST(value);
-					this.right = newRight;
+					right = newRight;
 				} else {
 					right.insert(value);
-				}
-				//if the value is smaller than right, insert to left
-
-			} else if (this.value < value) {
-				if( this.left == null){
-					BST newLeft = new BST(value);
-					this.left = newLeft;
-				}else{
-					left.insert(value);
 				}
 			}
 			return this;
@@ -71,13 +61,13 @@ class Program {
 
 		public boolean contains(int value) {
 			// Write your code here.
-			if (this.value > value) {
+			if (this.value < value) {
 				if (this.right == null) {
 					return false;
 				}else {
 					return right.contains(value);
 				}
-			} else if (this.value < value) {
+			} else if (this.value > value) {
 				if( this.left == null){
 					return false;
 				}else{
@@ -94,12 +84,49 @@ class Program {
 			remove(value, null);
 			return this;
 		}
-		public BST remove(int value, BST parent){
-			if( this.value = value){
+		public void remove(int value, BST parent){
+			if (this.value > value){
+				if(this.left != null) {
+					left.remove(value, this);
+				}
+			}else if (this.value < value){
+				if(this.right != null){
+					right.remove(value, this);
+				}
+			}else{
+				if(left != null && right != null){
+					this.value = right.smallestNumberFinder();
+					right.remove(this.value, this);
+				}else if(parent == null){
+					if(this.left != null){
+						this.value = this.left.value;
+						this.right = this.left.right;
+						this.left = this.left.left;
+					}
+					else if(this.right != null){
+						this.value  = right.value;
+						this.right = this.right.right;
+						this.left = right.left;
+					}
+					else{
+						//do nothing.
+					}
+				}
+				//handling only one leaf
+				else if(parent.left == this){
+					parent.left = this.left != null ? left : right;
+				} else if (parent.right == this) {
+					parent.right = this.right != null? right : left;
+				}
 
 			}
-			if()
-			return new BST(1);
+		}
+		public int smallestNumberFinder( ){
+			if(left == null){
+				return this.value;
+			}else {
+				return left.smallestNumberFinder();
+			}
 		}
 	}
 }
