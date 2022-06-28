@@ -23,23 +23,20 @@ class ProgramTest {
 	}
 }
 
-
 class Program {
 	public static boolean validateBst(BST tree) {
-		if(tree.left != null){
-			if(tree.left.value <= tree.value ){
-				validateBst(tree.left);
-			}else {
-				return false;
-			}
-		}
+		return validateBst(tree, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
 
-		if(tree.right != null){
-			if(tree.right.value > tree.value  ){
-				validateBst(tree.right);
-			}else{
-				return false;
-			}
+	public static boolean validateBst(BST tree, int smallestValue, int largestValue) {
+
+		if(tree.value < smallestValue || tree.value >= largestValue){
+			return false;
+		}
+		else if (tree.left != null && !validateBst(tree.left, smallestValue, tree.value)){
+			return false;
+		}else if(tree.right != null && !validateBst(tree.right, tree.value, largestValue)){
+			return false;
 		}
 		return true;
 	}
