@@ -1,4 +1,4 @@
-package com.jackson.interviewPrep.algoexpert.medium.findKLarsestValue.minHeightBst;
+package com.jackson.interviewPrep.algoexpert.medium.findKLarsestValue;
 
 import org.junit.jupiter.api.Test;
 
